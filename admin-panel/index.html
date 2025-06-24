@@ -8,24 +8,27 @@
 </head>
 <body>
   <h2>Admin Login</h2>
-  <input type="email" id="adminEmail" placeholder="Admin Email" />
-  <input type="password" id="adminPassword" placeholder="Password" />
-  <button id="adminLoginBtn">Login</button>
+  <form id="adminLoginForm" onsubmit="return false;">
+    <input type="email" id="adminEmail" placeholder="Admin Email" />
+    <input type="password" id="adminPassword" placeholder="Password" />
+    <button id="adminLoginBtn">Login</button>
+  </form>
 
   <div id="panel" style="display:none;">
     <h2>Create User</h2>
-    <input type="text" id="name" placeholder="Name" />
-    <input type="text" id="register" placeholder="Register Number (if student)" />
-    <input type="text" id="department" placeholder="Department" />
-    <input type="email" id="email" placeholder="Email" />
-    <input type="text" id="phone" placeholder="Phone" />
-    <input type="password" id="password" placeholder="Password" />
-    <select id="usertype">
-      <option value="Student">Student</option>
-      <option value="Staff">Staff</option>
-    </select>
-    <button id="createUserBtn">Create User</button>
-
+    <form id="createUserForm" onsubmit="return false;">
+      <input type="text" id="name" placeholder="Name" />
+      <input type="text" id="register" placeholder="Register Number (if student)" />
+      <input type="text" id="department" placeholder="Department" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="text" id="phone" placeholder="Phone" />
+      <input type="password" id="password" placeholder="Password" />
+      <select id="usertype">
+        <option value="Student">Student</option>
+        <option value="Staff">Staff</option>
+      </select>
+      <button id="createUserBtn">Create User</button>
+    </form>
     <div id="output"></div>
   </div>
 </body>

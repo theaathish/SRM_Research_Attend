@@ -1,3 +1,8 @@
+// Helper function to select elements by id
+function $(id) {
+  return document.getElementById(id);
+}
+
 const ADMIN_EMAIL = "admin";
 const ADMIN_PASSWORD = "password123";
 

@@ -4,32 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Admin Panel</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Firebase App (the core Firebase SDK) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <script type="module" src="admin.js"></script>
 </head>
-<body>
-  <h2>Admin Login</h2>
-  <form id="adminLoginForm" onsubmit="return false;">
-    <input type="email" id="adminEmail" placeholder="Admin Email" />
-    <input type="password" id="adminPassword" placeholder="Password" />
-    <button id="adminLoginBtn">Login</button>
-  </form>
-
-  <div id="panel" style="display:none;">
-    <h2>Create User</h2>
-    <form id="createUserForm" onsubmit="return false;">
-      <input type="text" id="name" placeholder="Name" />
-      <input type="text" id="register" placeholder="Register Number (if student)" />
-      <input type="text" id="department" placeholder="Department" />
-      <input type="email" id="email" placeholder="Email" />
-      <input type="text" id="phone" placeholder="Phone" />
-      <input type="password" id="password" placeholder="Password" />
-      <select id="usertype">
-        <option value="Student">Student</option>
-        <option value="Staff">Staff</option>
-      </select>
-      <button id="createUserBtn">Create User</button>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-lg">
+    <h2 class="text-2xl font-bold mb-8 text-center text-blue-700">Admin Login</h2>
+    <form id="adminLoginForm" onsubmit="return false;" class="space-y-4 mb-8">
+      <div>
+        <input type="text" id="adminUsername" placeholder="Admin Username" autocomplete="username"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+      <div>
+        <input type="password" id="adminPassword" placeholder="Password" autocomplete="current-password"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+      </div>
+      <button id="adminLoginBtn"
+        class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Login</button>
     </form>
-    <div id="output"></div>
+    <div id="panel" style="display:none;" class="mt-8">
+      <h2 class="text-xl font-semibold mb-4 text-blue-700 text-center">Create User</h2>
+      <form id="createUserForm" onsubmit="return false;" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <input type="text" id="name" placeholder="Name"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" id="register" placeholder="Register Number (if student)"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" id="department" placeholder="Department"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="email" id="email" placeholder="Email"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="text" id="phone" placeholder="Phone"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <input type="password" id="password" placeholder="Password" autocomplete="new-password"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+        <select id="usertype"
+          class="col-span-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <option value="Student">Student</option>
+          <option value="Staff">Staff</option>
+        </select>
+        <button id="createUserBtn"
+          class="col-span-1 md:col-span-2 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">Create User</button>
+      </form>
+      <div id="output" class="mt-6"></div>
+    </div>
   </div>
 </body>
 </html>

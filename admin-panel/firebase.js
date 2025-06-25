@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+// Use your actual Firebase config here
 const firebaseConfig = {
   apiKey: "AIzaSyD-EGtOlBWDOIjLiqymHR2EbCfcns-PI94",
   authDomain: "attandance-srm.firebaseapp.com",
